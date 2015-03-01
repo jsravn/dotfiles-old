@@ -1,0 +1,22 @@
+# general
+export EDITOR=vim
+export FIGNORE=.svn
+export BROWSER=chromium
+#export DE=xfce # for mime associations
+export PATH=$HOME/bin:/usr/lib/ccache/bin:$HOME/.cabal/bin:$PATH
+
+# java
+# export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+
+# idea
+export IDEA_VM_OPTIONS=$HOME/.idea64.vmoptions
+
+# keychain
+eval $(keychain --eval --agents ssh -Q --quiet id_rsa)
+
+# gradle
+export GRADLE_OPTS='-XX:MaxPermSize=512M -Xms1g -Xmx2g'
+
+# wine
+export WINEARCH=win32
+export WINEPREFIX=~/.wine

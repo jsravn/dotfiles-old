@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/jravn/.oh-my-zsh'
+let g:netrw_dirhist_2='/Users/jravn/devel'
+let g:netrw_dirhist_3='/Users/jravn/devel/par.master'
+let g:netrw_dirhist_4='/Users/jravn/build/crawl/crawl-ref/source'
+let g:netrw_dirhist_5='/home/jravn/.local/bin'
+let g:netrw_dirhist_6='/home/jravn/devel/jsravn.github.io/_posts'
