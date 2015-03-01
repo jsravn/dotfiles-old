@@ -36,7 +36,7 @@ function link_file() {
             local target="$home_dir/.$base/$(basename $subfile)"
             link_it $subfile $target
         done
-    else
+    elif [ -f $file ]; then
         local target="$home_dir/.$base"
         link_it $file $target
     fi

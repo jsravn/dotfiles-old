@@ -66,7 +66,7 @@ myStartupHook = do
 myUrgencyHook = NoUrgencyHook
 
 myPP :: PP
-myPP = def { ppOrder = \(_:l:_) -> [l] }
+myPP = defaultPP { ppOrder = \(_:l:_) -> [l] }
 
 main = xmonad $ withUrgencyHook myUrgencyHook $ defaults
 
