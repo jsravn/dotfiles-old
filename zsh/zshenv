@@ -6,10 +6,10 @@ export BROWSER=chromium
 export PATH=$HOME/bin:/usr/lib/ccache/bin:$HOME/.cabal/bin:$PATH
 
 # java
-# export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+#export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 
 # idea
-export IDEA_VM_OPTIONS=$HOME/.idea64.vmoptions
+#export IDEA_VM_OPTIONS=$HOME/.idea64.vmoptions
 
 # keychain
 eval $(keychain --eval --agents ssh -Q --quiet id_rsa)
