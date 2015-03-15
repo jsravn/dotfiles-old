@@ -6,4 +6,6 @@ My (non-sensitive) dotfiles.
 
 Install like so:
 
-    ./linkthem $HOME
+    git clone https://github.com/jsravn/dotfiles.git ~/.dotfiles
+    ~/.dotfiles/linkthem $HOME
+
