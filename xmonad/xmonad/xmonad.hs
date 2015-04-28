@@ -1,38 +1,39 @@
 --
--- xmonad example config file.
+-- xmonad inside of xfce
+-- author: James Ravn <james@r-vn.org>
 --
--- A template showing all available configuration hooks,
--- and how to override the defaults in your own xmonad.hs conf file.
+-- disable xfwm4 and xfdesktoo
 --
-
--- Normally, you'd only override those defaults you care about.
---
-
-import XMonad
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
--- Various
+import XMonad
 import XMonad.Config.Xfce
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
-import XMonad.Util.EZConfig(additionalKeys)
-import XMonad.Hooks.UrgencyHook
-import XMonad.Hooks.SetWMName
 import XMonad.Hooks.ManageHelpers
-
--- Layouts
+import XMonad.Hooks.SetWMName
+import XMonad.Hooks.UrgencyHook
 import XMonad.Layout.SimpleFloat
 import XMonad.Layout.NoBorders
 import Data.List
-import XMonad.Hooks.EwmhDesktops
+import XMonad.Util.EZConfig(additionalKeys)
 
--- Config
-myTerminal      = "urxvt -name zenburn"
-myModMask       = mod4Mask
-myNormalBorderColor  = "#000000"
-myFocusedBorderColor = "#dcdccc"
+conf = ewmh xfceConfig {
+        terminal           = "urxvt -name zenburn",
+        modMask            = mod4Mask,
+        normalBorderColor  = "#000000",
+        focusedBorderColor = "#dcdccc",
+        layoutHook         = myLayout,
+        manageHook         = myManageHook,
+        logHook            = ewmhDesktopsLogHook,
+        startupHook        = myStartupHook
+    }
+    `additionalKeys` myKeyBindings
+
+-- Layout
 
 myLayout = smartBorders . avoidStruts $
            (Full ||| tiled ||| simpleFloat)
@@ -43,6 +44,8 @@ myLayout = smartBorders . avoidStruts $
      delta   = 3/100
 
 q ~=? x = fmap (isPrefixOf x) q
+
+-- Window management
 
 myManageHook =
   composeOne [
@@ -63,27 +66,16 @@ myStartupHook = do
   startupHook xfceConfig
   setWMName "LG3D"
 
-myUrgencyHook = NoUrgencyHook
-
 myPP :: PP
 myPP = defaultPP { ppOrder = \(_:l:_) -> [l] }
 
-main = xmonad $ withUrgencyHook myUrgencyHook $ defaults
-
-defaults = xfceConfig {
-        terminal           = myTerminal,
-        modMask            = myModMask,
-        normalBorderColor  = myNormalBorderColor,
-        focusedBorderColor = myFocusedBorderColor,
-        layoutHook         = myLayout,
-        manageHook         = myManageHook,
-        logHook            = myLogHook,
-        startupHook        = myStartupHook
-    }
-    `additionalKeys`
-           [ ((mod4Mask, xK_p), spawn "xfce4-popup-whiskermenu"),
-             ((mod4Mask, xK_space ), sendMessage NextLayout
-                                     >> notifyLayout) ]
+myKeyBindings = [
+  ((mod4Mask, xK_p), spawn "xfce4-popup-whiskermenu"),
+  ((mod4Mask, xK_space ), sendMessage NextLayout >> notifyLayout)
+  ]
   where
     notifyLayout = dynamicLogString myPP >>= notifySend
     notifySend d = spawn $ "/usr/bin/notify-send \"" ++ d ++ " \""
+
+-- Main
+main = xmonad $ conf
