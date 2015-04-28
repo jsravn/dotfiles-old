@@ -19,7 +19,11 @@ function link_it() {
     local target=$2
 
     echo "Linking $source to $target"
-    ln -sf $source $target
+    if [[ -d $target && ! -h $target ]]; then
+        echo "ERROR: $target is a real directory, failing to link - remove it first"
+    else
+        ln -sf $source $target
+    fi
 }
 
 function link_file() {
