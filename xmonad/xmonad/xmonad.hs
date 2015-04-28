@@ -25,10 +25,13 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
 import XMonad.Layout.ComboP
+import XMonad.Layout.Gaps
 import XMonad.Layout.Named
 import XMonad.Layout.NoBorders
 import XMonad.Layout.ResizableTile
 import XMonad.Layout.Tabbed
+import XMonad.Layout.ThreeColumns
+
 
 conf = ewmh xfceConfig
         { manageHook        = composeOne (myManageHook ++ defaultManageHook)
@@ -54,15 +57,17 @@ main =
          }
 
 -- Layouts --
-myLayoutHook = tile ||| mtile ||| full
+myLayoutHook = smartBorders $ tile ||| mtile ||| mid ||| full
   where
     rt      = ResizableTall 1 (2/100) (1/2) []
     -- normal vertical tile
-    tile    = named "tile"        $ smartBorders rt
+    tile    = rt
     -- normal horizontal tile
-    mtile   = named "mtile"       $ smartBorders $ Mirror rt
+    mtile   = Mirror rt
+    -- three col
+    mid     = ThreeColMid 1 (3/100) (1/2)
     -- fullscreen
-    full        = named "full"    $ noBorders Full
+    full    = Full
 
 -- Default managers
 --
