@@ -12,8 +12,9 @@
 
 (evil-mode 1)
 
-;; deal with haskell-mode quirkiness
-(add-to-list 'evil-emacs-state-modes 'haskell-interactive-mode)
+;; evil mode tweaks per major mode
+(evil-set-initial-state 'haskell-interactive-mode 'emacs)
+(evil-set-initial-state 'git-commit-mode 'insert)
 
 (prelude-mode 1)
 
