@@ -112,7 +112,7 @@ avoidMaster = W.modify' $ \c -> case c of
 myKeys :: XConfig Layout -> M.Map (KeyMask, KeySym) (X ())
 myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- launching and killing programs
-    [ ((modMask,                xK_Return   ), spawn "urxvt")
+    [ ((modMask .|. shiftMask,  xK_Return   ), spawn "urxvt")
     , ((modMask,                xK_o        ), spawn "xfrun4")
     , ((modMask,                xK_p        ), spawn "xfce4-popup-whiskermenu")
     , ((modMask,                xK_f        ), spawn "thunar")
@@ -140,7 +140,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask .|. shiftMask,  xK_Left     ), shiftToPrev >> prevWS)
 
     -- swapping
-    , ((modMask .|. shiftMask,  xK_Return   ), windows W.swapMaster)
+    , ((modMask,                xK_Return   ), windows W.swapMaster)
     , ((modMask .|. shiftMask,  xK_j        ), windows W.swapDown)
     , ((modMask .|. shiftMask,  xK_k        ), windows W.swapUp)
     , ((modMask,                xK_s        ), sendMessage $ SwapWindow)

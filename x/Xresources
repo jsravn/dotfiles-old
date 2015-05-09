@@ -1,3 +1,8 @@
+!
+!! X
+Xcursor.size:               8
+
+!
 !! xterm
 UXTerm*faceName:            Droid Sans Mono Slashed:size=18
 UXTerm*saveLines:           4096
@@ -6,11 +11,10 @@ UXTerm*vt100.geometry:      80x24
 UXTerm*highlightSelection:  true
 UXTerm*locale:              true
 UXTerm*bellIsUrgent:        true
-
+!
 !! rxvt
 URxvt*font:                 xft:Droid Sans Mono Slashed:pixelsize=13\
-                            xft:DejaVu Sans Mono:antialias=true,\
-                            xft:unifont:antialias=true
+                            xft:DejaVu Sans Mono:antialias=true
 URxvt*letterSpace:          -1
 URxvt*saveLines:            2048
 URxvt*geometry:             80x24
