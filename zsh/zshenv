@@ -15,7 +15,7 @@ export PATH=$HOME/bin:/usr/lib/ccache/bin:$HOME/.cabal/bin:$PATH
 eval $(keychain --eval --agents ssh -Q --quiet id_rsa)
 
 # gradle
-export GRADLE_OPTS='-XX:MaxPermSize=512M -Xms1g -Xmx2g'
+export GRADLE_OPTS='-Xmx2g'
 
 # wine
 export WINEARCH=win32
