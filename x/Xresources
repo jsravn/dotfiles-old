@@ -13,7 +13,7 @@ UXTerm*locale:              true
 UXTerm*bellIsUrgent:        true
 !
 !! rxvt
-URxvt*font:                 xft:Droid Sans Mono Slashed:pixelsize=13\
+URxvt*font:                 xft:Droid Sans Mono Slashed:pixelsize=13,\
                             xft:DejaVu Sans Mono:antialias=true
 URxvt*letterSpace:          -1
 URxvt*saveLines:            2048
