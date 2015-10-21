@@ -44,4 +44,13 @@
 ;; linum
 (global-linum-mode 1)
 
+;; go-lang
+(add-hook 'go-mode-hook
+  (lambda ()
+    (setq tab-width 8)
+    (setq indent-tabs-mode 1)))
+
+;; whitespace config
+(setq prelude-whitespace nil)
+
 ;;; settings.el ends here
