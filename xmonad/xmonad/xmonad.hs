@@ -112,7 +112,7 @@ avoidMaster = W.modify' $ \c -> case c of
 myKeys :: XConfig Layout -> M.Map (KeyMask, KeySym) (X ())
 myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- launching and killing programs
-    [ ((modMask .|. shiftMask,  xK_Return   ), spawn "urxvt")
+    [ ((modMask .|. shiftMask,  xK_Return   ), spawn "urxvt -name zenburn")
     , ((modMask,                xK_o        ), spawn "xfrun4")
     , ((modMask,                xK_p        ), spawn "xfce4-popup-whiskermenu")
     , ((modMask,                xK_f        ), spawn "thunar")
