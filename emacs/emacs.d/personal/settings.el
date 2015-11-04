@@ -12,6 +12,8 @@
 
 (evil-mode 1)
 
+(setq visible-bell 1)
+
 ;; evil mode tweaks per major mode
 (evil-set-initial-state 'haskell-interactive-mode 'emacs)
 (evil-set-initial-state 'git-commit-mode 'insert)
@@ -40,5 +42,21 @@
 ;; neotree
 (global-set-key [f8] 'neotree-toggle)
 (setq projectile-switch-project-action 'neotree-projectile-action)
+
+;; linum
+(global-linum-mode 1)
+
+;; go-lang
+(add-hook 'go-mode-hook
+  (lambda ()
+    (setq tab-width 8)
+    (setq indent-tabs-mode 1)))
+
+;; whitespace config
+(setq prelude-whitespace nil)
+
+;; auctex
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
 
 ;;; settings.el ends here
