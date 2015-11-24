@@ -12,6 +12,8 @@
 
 (evil-mode 1)
 
+(setq visible-bell 1)
+
 ;; evil mode tweaks per major mode
 (evil-set-initial-state 'haskell-interactive-mode 'emacs)
 (evil-set-initial-state 'git-commit-mode 'insert)
@@ -52,5 +54,9 @@
 
 ;; whitespace config
 (setq prelude-whitespace nil)
+
+;; auctex
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
 
 ;;; settings.el ends here
