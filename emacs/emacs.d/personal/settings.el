@@ -8,11 +8,13 @@
 (setq x-select-enable-clipboard t)
 (setq ido-use-virtual-buffers t)
 
-(prelude-require-packages '(evil markdown-mode robe enh-ruby-mode neotree rust-mode))
+(prelude-require-packages '(evil markdown-mode robe enh-ruby-mode rust-mode))
 
 (evil-mode 1)
 
 (setq visible-bell 1)
+
+(global-linum-mode 1)
 
 ;; evil mode tweaks per major mode
 (evil-set-initial-state 'haskell-interactive-mode 'emacs)
@@ -40,11 +42,8 @@
 (setq org-export-backends '(docbook html beamer ascii latex md))
 
 ;; neotree
-(global-set-key [f8] 'neotree-toggle)
-(setq projectile-switch-project-action 'neotree-projectile-action)
-
-;; linum
-(global-linum-mode 1)
+;(global-set-key [f8] 'neotree-toggle)
+;(setq projectile-switch-project-action 'neotree-projectile-action)
 
 ;; go-lang
 (add-hook 'go-mode-hook
