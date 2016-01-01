@@ -22,7 +22,7 @@ function link_it() {
     if [[ -d $target && ! -h $target ]]; then
         echo "ERROR: $target is a real directory, failing to link - remove it first"
     else
-        ln -sf $source $target
+        ln -snf $source $target
     fi
 }
 
