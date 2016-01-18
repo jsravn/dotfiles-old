@@ -3,7 +3,7 @@ export EDITOR=vim
 export FIGNORE=.svn
 export BROWSER=chromium
 #export DE=xfce # for mime associations
-export PATH=$HOME/bin:/usr/lib/ccache/bin:$HOME/.cabal/bin:$PATH
+export GOPATH=$HOME/godev
 
 # java
 #export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
@@ -20,3 +20,6 @@ export GRADLE_OPTS='-Xmx2g'
 # wine
 export WINEARCH=win32
 export WINEPREFIX=~/.wine
+
+# bundler
+export GEM_HOME=$(ruby -e 'print Gem.user_dir')
