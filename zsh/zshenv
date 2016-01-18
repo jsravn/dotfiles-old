@@ -12,7 +12,7 @@ export PATH=$HOME/bin:/usr/lib/ccache/bin:$HOME/.cabal/bin:$PATH
 #export IDEA_VM_OPTIONS=$HOME/.idea64.vmoptions
 
 # keychain
-eval $(keychain --eval --agents ssh -Q --quiet id_rsa)
+#eval $(keychain --eval --agents ssh -Q --quiet id_rsa)
 
 # gradle
 export GRADLE_OPTS='-Xmx2g'

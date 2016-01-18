@@ -1,5 +1,0 @@
-# base
-. ~/Dropbox/dotfiles/zsh_aliases-base
-alias g='git'
-alias e='emacsclient -t'
-alias ec='emacsclient -c'
