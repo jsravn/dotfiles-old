@@ -22,4 +22,4 @@ export WINEARCH=win32
 export WINEPREFIX=~/.wine
 
 # bundler
-export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+#export GEM_HOME=$(ruby -e 'print Gem.user_dir')
