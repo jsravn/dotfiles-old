@@ -44,3 +44,5 @@
 	default = upstream
 [core]
 	editor = /usr/bin/vim
+[credential]
+	helper = cache --timeout=86400
