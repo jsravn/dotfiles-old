@@ -90,4 +90,4 @@ setopt no_complete_aliases
 typeset -U path
 path=(~/bin /usr/lib/ccache/bin ~/.cabal/bin $GOPATH/bin $path)
 
-eval "$(rbenv init -)"
+which rbenv > /dev/null && eval "$(rbenv init -)"
