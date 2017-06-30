@@ -21,6 +21,7 @@
 (evil-set-initial-state 'git-commit-mode 'insert)
 (evil-set-initial-state 'neotree-mode 'emacs)
 (evil-set-initial-state 'shell-mode 'emacs)
+(define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
 
 ;; prelude tweaks
 (prelude-mode 1)
