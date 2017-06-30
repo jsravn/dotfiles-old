@@ -14,6 +14,7 @@
 (global-linum-mode 1)
 (setq browse-url-browser-function 'browse-url-chromium)
 (setq magit-last-seen-setup-instructions "1.4.0")
+(setq linum-format "%4d \u2502 ")
 
 ;; evil mode tweaks per major mode
 (evil-set-initial-state 'haskell-interactive-mode 'emacs)
