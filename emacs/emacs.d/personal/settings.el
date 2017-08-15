@@ -3,11 +3,11 @@
 
 ;;; Code:
 (setq guru-warn-only t)
-(projectile-global-mode)
+(projectile-mode)
 (setq x-select-enable-primary t)
 (setq x-select-enable-clipboard t)
 (setq ido-use-virtual-buffers t)
-(prelude-require-packages '(evil markdown-mode robe enh-ruby-mode rust-mode ghc company-ghc))
+(prelude-require-packages '(evil markdown-mode robe enh-ruby-mode rust-mode ghc company-ghc hindent auctex))
 (evil-mode 1)
 (add-hook 'after-init-hook 'global-company-mode)
 (setq visible-bell 1)
@@ -18,6 +18,7 @@
 
 ;; evil mode tweaks per major mode
 (evil-set-initial-state 'haskell-interactive-mode 'emacs)
+(evil-set-initial-state 'haskell-error-mode 'emacs)
 (evil-set-initial-state 'git-commit-mode 'insert)
 (evil-set-initial-state 'neotree-mode 'emacs)
 (evil-set-initial-state 'shell-mode 'emacs)
@@ -64,6 +65,7 @@
 (custom-set-variables '(company-ghc-show-info t))
 (eval-after-load 'haskell-mode
   '(define-key haskell-mode-map [f8] 'haskell-navigate-imports))
+(add-hook 'haskell-mode-hook 'hindent-mode)
 
 ;; org
 (setq org-export-backends '(docbook html beamer ascii latex md))
