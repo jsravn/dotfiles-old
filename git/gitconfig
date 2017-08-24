@@ -46,3 +46,5 @@
 	editor = /usr/bin/vim
 [credential]
 	helper = cache --timeout=86400
+[fetch]
+	prune = true
