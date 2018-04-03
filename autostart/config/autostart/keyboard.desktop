@@ -3,7 +3,7 @@ Name=SetKeyboardDelay
 Type=Application
 Terminal=true
 Comment=Set the keyboard repeat rate and delay
-Exec=gsettings set org.gnome.desktop.peripherals.keyboard delay 150
+Exec=gsettings set org.gnome.desktop.peripherals.keyboard delay 200
 
 [Desktop Entry]
 Name=SetKeyboardRepeat
