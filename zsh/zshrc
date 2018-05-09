@@ -35,6 +35,10 @@ plugins=(autojump)
 
 . $ZSH/oh-my-zsh.sh
 
+# fzf
+. /usr/share/fzf/key-bindings.zsh
+. /usr/share/fzf/completion.zsh
+
 # Customize to your needs...
 # completely disable auto correct
 unsetopt correct_all
