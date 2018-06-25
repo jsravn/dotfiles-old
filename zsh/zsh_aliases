@@ -1,1 +1,4 @@
 alias k=kubectl
+gfmt() {
+    goimports -w $(find . -path ./vendor -prune -o -name '*.go' -print)
+}
