@@ -39,6 +39,9 @@ plugins=(autojump)
 [ -e /usr/share/fzf/key-bindings.zsh ] && . /usr/share/fzf/key-bindings.zsh
 [ -e /usr/share/fzf/completion.zsh ] && . /usr/share/fzf/completion.zsh
 
+# kubectl aliases
+[ -e ~/.kubectl_aliases ] && source ~/.kubectl_aliases
+
 # Customize to your needs...
 # completely disable auto correct
 unsetopt correct_all
@@ -92,6 +95,6 @@ setopt no_complete_aliases
 
 # local path
 typeset -U path
-path=(~/bin /usr/lib/ccache/bin ~/.cabal/bin ~/.local/bin $GOPATH/bin $path)
+path=(~/bin /usr/lib/ccache/bin ~/.cabal/bin ~/.local/bin $HOME/go/bin $HOME/godev/bin $path)
 
 which rbenv > /dev/null && eval "$(rbenv init -)"
