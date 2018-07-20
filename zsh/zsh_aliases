@@ -2,3 +2,5 @@ alias k=kubectl
 gfmt() {
     goimports -w $(find . -path ./vendor -prune -o -name '*.go' -print)
 }
+# cheeky trick to make watch work with other aliases, weird expansions, and so on
+alias watch='watch '
