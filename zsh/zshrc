@@ -98,3 +98,9 @@ typeset -U path
 path=(~/bin /usr/lib/ccache/bin ~/.cabal/bin ~/.local/bin $HOME/go/bin $HOME/godev/bin $path)
 
 which rbenv > /dev/null && eval "$(rbenv init -)"
+
+# added by travis gem
+[ -f /home/james/.travis/travis.sh ] && source /home/james/.travis/travis.sh
+
+# nvm
+[ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
