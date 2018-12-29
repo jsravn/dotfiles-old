@@ -104,3 +104,6 @@ which rbenv > /dev/null && eval "$(rbenv init -)"
 
 # nvm
 [ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
+
+# rust
+[ -f $HOME/.cargo/env ] && source $HOME/.cargo/env
