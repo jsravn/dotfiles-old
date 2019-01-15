@@ -56,4 +56,6 @@
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
 
+;; server for opening files with emacsclient -n $file
+(server-start)
 ;;; settings.el ends here
