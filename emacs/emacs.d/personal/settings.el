@@ -56,6 +56,12 @@
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
 
+;; c-mode
+;; switch between source/header files easily
+(add-hook 'c-mode-common-hook
+  (lambda()
+    (local-set-key  (kbd "<C-tab>") 'ff-find-other-file)))
+
 ;; server for opening files with emacsclient -n $file
 (server-start)
 ;;; settings.el ends here
